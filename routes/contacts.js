@@ -3,7 +3,7 @@ const router = express.Router();
 const connection = require("../config");
 
 router.get("/", (req, res) => {
-  connection.query("SELECT * FROM contact", (err, results) => {
+  connection.query("SELECT * FROM contact ORDER BY id DESC", (err, results) => {
     if (err) {
       res.sendStatus(500);
     } else {
